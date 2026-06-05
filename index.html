@@ -194,5 +194,472 @@
     </footer>
 
     <script src="js/script.js"></script>
+    /* ==========================================================================
+   1. KHAI BÁO BIẾN HỆ THỐNG (CSS VARIABLES) & RESET LAYOUT
+   ========================================================================== */
+:root {
+    --brand-primary: #2563eb;
+    --brand-dark: #1e3a8a;
+    --bg-global: #f8fafc;
+    --bg-white: #ffffff;
+    --text-dark: #0f172a;
+    --text-muted: #475569;
+    --text-slate: #94a3b8;
+    --border-line: #e2e8f0;
+    
+    /* Màu sắc phân phối mã màu các phân đoạn URL */
+    --url-proto: #f43f5e;
+    --url-subdomain: #f59e0b;
+    --url-domain: #10b981;
+    --url-path: #3b82f6;
+    --url-query: #a855f7;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: var(--bg-global);
+    color: var(--text-muted);
+    line-height: 1.7;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-padding {
+    padding: 5rem 0;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.section-header h2 {
+    font-size: 2rem;
+    color: var(--text-dark);
+    font-weight: 800;
+    margin-bottom: 0.75rem;
+}
+
+.section-header p {
+    color: var(--text-slate);
+    font-size: 1.05rem;
+}
+
+/* ==========================================================================
+   2. NAVBAR
+   ========================================================================== */
+.navbar {
+    background-color: var(--bg-white);
+    border-bottom: 1px solid var(--border-line);
+    padding: 1.25rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-logo {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: var(--text-dark);
+}
+
+.nav-logo span {
+    color: var(--brand-primary);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: var(--brand-primary);
+}
+
+/* ==========================================================================
+   3. HERO BANNER
+   ========================================================================== */
+.hero-banner {
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+    color: white;
+    padding: 6rem 0;
+    text-align: center;
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-badge {
+    background-color: rgba(59, 130, 246, 0.15);
+    color: #60a5fa;
+    padding: 0.4rem 1rem;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin-bottom: 1.5rem;
+}
+
+.hero-banner h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    margin-bottom: 1rem;
+    max-width: 800px;
+}
+
+.hero-banner p {
+    font-size: 1.15rem;
+    color: #94a3b8;
+    max-width: 700px;
+    margin-bottom: 2.5rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.85rem 2rem;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--brand-primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #1d4ed8;
+    transform: translateY(-2px);
+}
+
+/* ==========================================================================
+   4. CONCEPTS GRID LAYOUT
+   ========================================================================== */
+.concepts-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 2rem;
+}
+
+.concept-card {
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-line);
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.concept-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.05);
+}
+
+.card-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    margin-bottom: 1.5rem;
+}
+
+.icon-domain { background-color: #fff1f2; }
+.icon-hosting { background-color: #ecfdf5; }
+.icon-url { background-color: #eff6ff; }
+
+.concept-card h3 {
+    font-size: 1.3rem;
+    color: var(--text-dark);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.card-desc {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+}
+
+.card-list {
+    list-style: none;
+    border-top: 1px solid var(--border-line);
+    padding-top: 1.25rem;
+}
+
+.card-list li {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.card-list li::before {
+    content: "•";
+    color: var(--brand-primary);
+    font-weight: bold;
+}
+
+code {
+    background-color: #f1f5f9;
+    padding: 0.15rem 0.35rem;
+    border-radius: 4px;
+    font-family: monospace;
+    color: #ef4444;
+    font-size: 0.9em;
+}
+
+/* ==========================================================================
+   5. TABLE LAYOUT STYLING
+   ========================================================================== */
+.data-table-section {
+    background-color: var(--bg-white);
+    padding: 4rem 2rem;
+    border-radius: 20px;
+    border: 1px solid var(--border-line);
+    margin-bottom: 4rem;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+    text-align: left;
+}
+
+.styled-table th, .styled-table td {
+    padding: 1rem 1.25rem;
+}
+
+.styled-table th {
+    background-color: #f8fafc;
+    color: var(--text-dark);
+    font-weight: 700;
+    border-bottom: 2px solid var(--border-line);
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid var(--border-line);
+    transition: background-color 0.15s ease;
+}
+
+.styled-table tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+/* ==========================================================================
+   6. TERMINAL VIEW INTERACTIVE
+   ========================================================================== */
+.visualizer-section {
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-line);
+    border-radius: 20px;
+    padding: 4rem 3rem;
+}
+
+.explorer-container {
+    background-color: #f8fafc;
+    border: 1px solid var(--border-line);
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.block-header h4 {
+    font-size: 0.95rem;
+    color: var(--text-dark);
+    margin-bottom: 1rem;
+}
+
+.terminal-window {
+    background-color: #0f172a;
+    border-radius: 8px;
+    padding: 1.25rem;
+    box-shadow: inset 0 2px 8px rgba(0,0,0,0.3);
+    margin-bottom: 1.25rem;
+}
+
+.terminal-dots {
+    display: flex;
+    gap: 0.4rem;
+    margin-bottom: 0.75rem;
+}
+
+.terminal-dots span {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.terminal-dots span:nth-child(1) { background-color: #ef4444; }
+.terminal-dots span:nth-child(2) { background-color: #eab308; }
+.terminal-dots span:nth-child(3) { background-color: #22c55e; }
+
+.url-string {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.2rem;
+    font-weight: 600;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.url-segment {
+    padding: 0.2rem 0.3rem;
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    transition: all 0.15s ease;
+}
+
+.url-segment:hover {
+    background-color: rgba(255, 255, 255, 0.12);
+    transform: scale(1.02);
+}
+
+.url-segment.active {
+    background-color: rgba(255, 255, 255, 0.18);
+    outline: 2px dashed #ffffff;
+}
+
+.seg-proto { color: var(--url-proto); }
+.seg-subdomain { color: var(--url-subdomain); }
+.seg-domain { color: var(--url-domain); }
+.seg-path { color: var(--url-path); }
+.seg-query { color: var(--url-query); }
+
+.explanation-panel {
+    background-color: var(--bg-white);
+    border-left: 4px solid var(--brand-primary);
+    padding: 1.25rem;
+    border-radius: 0 8px 8px 0;
+    min-height: 80px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.panel-placeholder {
+    color: var(--text-slate);
+    font-style: italic;
+}
+
+.panel-data h5 {
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin-bottom: 0.4rem;
+}
+
+.panel-data p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* ==========================================================================
+   7. FOOTER
+   ========================================================================== */
+.site-footer {
+    background-color: #0f172a;
+    color: #94a3b8;
+    padding: 3rem 0;
+    text-align: center;
+    margin-top: 5rem;
+}
+
+/* ==========================================================================
+   8. RESPONSIVE DESIGN
+   ========================================================================== */
+@media (max-width: 992px) {
+    .hero-banner h1 { font-size: 2.5rem; }
+    .visualizer-section { padding: 2rem 1.5rem; }
+}
+
+@media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero-banner h1 { font-size: 2rem; }
+    .url-string { font-size: 1rem; }
+}
+    document.addEventListener('DOMContentLoaded', () => {
+    
+    // Hàm khởi tạo cơ chế quản lý sự kiện tương tác click phân đoạn URL
+    const initUrlVisualizer = (blockId) => {
+        const rootContainer = document.getElementById(blockId);
+        if (!rootContainer) return;
+
+        const segments = rootContainer.querySelectorAll('.url-segment');
+        const placeholderText = rootContainer.querySelector('.panel-placeholder');
+        const infoBoxes = rootContainer.querySelectorAll('.panel-data');
+
+        segments.forEach(segment => {
+            segment.addEventListener('click', () => {
+                // 1. Gỡ bỏ trạng thái kích hoạt cũ của các phân đoạn khác
+                segments.forEach(seg -> seg.classList.remove('active'));
+                
+                // 2. Kích hoạt hiệu ứng đường viền nét đứt cho đoạn vừa chọn
+                segment.classList.add('active');
+                
+                // 3. Ẩn văn bản hướng dẫn mặc định
+                if (placeholderText) {
+                    placeholderText.classList.add('hidden');
+                }
+                
+                // 4. Ẩn toàn bộ nội dung giải thích cũ đang hiển thị
+                infoBoxes.forEach(box => box.classList.add('hidden'));
+                
+                // 5. Quét tìm hộp dữ liệu mục tiêu thông qua data-target và hiển thị
+                const targetClass = segment.getAttribute('data-target');
+                const activeBox = rootContainer.querySelector(`.${targetClass}`);
+                if (activeBox) {
+                    activeBox.classList.remove('hidden');
+                }
+            });
+        });
+    };
+
+    // Khởi chạy trình tương tác xử lý cấu trúc cho cả 2 khối URL mẫu
+    initUrlVisualizer('urlBlock1');
+    initUrlVisualizer('urlBlock2');
+});
 </body>
 </html>
