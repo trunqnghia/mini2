@@ -1,0 +1,198 @@
+# mini2
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini-project 2: URL Explorer Tĩnh</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="container nav-container">
+            <div class="nav-logo">🌐 WebExplorer<span>.io</span></div>
+            <ul class="nav-links">
+                <li><a href="#core-concepts">Kiến Thức Nền Tảng</a></li>
+                <li><a href="#infrastructure-table">So Sánh Kỹ Thuật</a></li>
+                <li><a href="#url-visualizer">Trực Quan Hóa URL</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="hero-banner">
+        <div class="container hero-container">
+            <span class="hero-badge">Mini-project 2: Web Architecture</span>
+            <h1>Khám Phá Hạ Tầng Mạng & Cấu Trúc URL</h1>
+            <p>Hệ thống trực quan hóa giúp phân tích chuyên sâu về cơ chế hoạt động của Tên miền (Domain), Không gian lưu trữ (Hosting) và định vị tài nguyên Internet.</p>
+            <div class="hero-actions">
+                <a href="#url-visualizer" class="btn btn-primary">Bắt Đầu Trực Quan Hóa URL ➔</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        
+        <section id="core-concepts" class="section-padding">
+            <div class="section-header">
+                <h2>1. Ba Trụ Cột Định Hình Một Website</h2>
+                <p>Những thành phần cốt lõi bắt buộc phải có để một ứng dụng web vận hành trên Internet.</p>
+            </div>
+
+            <div class="concepts-grid">
+                <article class="concept-card">
+                    <div class="card-icon icon-domain">🏠</div>
+                    <h3>Domain Name (Tên miền)</h3>
+                    <p class="card-desc">Là chuỗi ký tự chữ viết dễ nhớ dùng để định danh vị trí của một website, thay thế cho các địa chỉ IP số (Internet Protocol) khô khan của máy chủ.</p>
+                    <ul class="card-list">
+                        <li><strong>Top-Level Domain (TLD):</strong> <code>.com</code>, <code>.vn</code>, <code>.org</code></li>
+                        <li><strong>Second-Level Domain (SLD):</strong> <code>google</code>, <code>github</code></li>
+                        <li><strong>Chức năng:</strong> Đại diện cho thương hiệu số của doanh nghiệp.</li>
+                    </ul>
+                </article>
+
+                <article class="concept-card">
+                    <div class="card-icon icon-hosting">📦</div>
+                    <h3>Web Hosting (Lưu trữ)</h3>
+                    <p class="card-desc">Là không gian đĩa cứng được thuê trên một máy chủ (Server) cấu hình mạnh, luôn kết nối mạng 24/7. Đây là nơi chứa toàn bộ mã nguồn, hình ảnh và dữ liệu của trang web.</p>
+                    <ul class="card-list">
+                        <li><strong>Thành phần chứa:</strong> Source code (HTML, CSS, JS), Database.</li>
+                        <li><strong>Tiêu chuẩn kĩ thuật:</strong> Băng thông rộng, Uptime 99.9%, mã hóa bảo mật.</li>
+                        <li><strong>Nền tảng mẫu:</strong> GitHub Pages (Dịch vụ hosting tĩnh chuyên dụng).</li>
+                    </ul>
+                </article>
+
+                <article class="concept-card">
+                    <div class="card-icon icon-url">🔗</div>
+                    <h3>URL (Đường dẫn đồng nhất)</h3>
+                    <p class="card-desc">Viết tắt của <em>Uniform Resource Locator</em>. Đây là chuỗi định vị tài nguyên đồng nhất, chỉ ra chính xác phương thức truy cập và vị trí tệp tin trên mạng toàn cầu.</p>
+                    <ul class="card-list">
+                        <li><strong>Phạm vi trỏ:</strong> Trang HTML, hình ảnh, tài liệu PDF, API endpoint.</li>
+                        <li><strong>Cấu trúc chuẩn:</strong> Giao thức + Tên miền + Thư mục + Tệp tin.</li>
+                        <li><strong>Đặc tính:</strong> Độc nhất, không trùng lặp trên mạng Internet toàn cầu.</li>
+                    </ul>
+                </article>
+            </div>
+        </section>
+
+        <section id="infrastructure-table" class="section-padding data-table-section">
+            <div class="section-header">
+                <h2>2. Bảng Phân Tích Thực Thể Hạ Tầng Web</h2>
+                <p>Hệ thống hóa cách thức các thành phần mạng máy tính phối hợp xử lý gói tin yêu cầu (Request).</p>
+            </div>
+
+            <div class="table-container">
+                <table class="styled-table">
+                    <thead>
+                        <tr>
+                            <th>Thành Phần Hệ Thống</th>
+                            <th>Bản Chất Kỹ Thuật</th>
+                            <th>Ví Dụ Thực Tế</th>
+                            <th>Vai Trò Khi Người Dùng Truy Cập</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Giao thức (Protocol)</strong></td>
+                            <td>Tập hợp quy chuẩn mã hóa để trao đổi thông tin dữ liệu an toàn.</td>
+                            <td><code>HTTP</code>, <code>HTTPS</code>, <code>FTP</code></td>
+                            <td>Trình duyệt đọc để thiết lập kênh kết nối mã hóa bảo mật dữ liệu SSL/TLS.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hệ thống DNS</strong></td>
+                            <td>Hệ thống phân giải tên miền (Giống như danh bạ điện thoại Internet).</td>
+                            <td>DNS Server toàn cầu: <code>8.8.8.8</code></td>
+                            <td>Dịch tên miền dạng chữ (như `github.com`) sang địa chỉ số IP (`140.82.113.3`).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Web Server</strong></td>
+                            <td>Máy chủ vật lý chạy phần mềm quản trị và phân phối mã nguồn.</td>
+                            <td>Nginx, Apache, GitHub Pages Server</td>
+                            <td>Tiếp nhận Request từ Client, tìm kiếm tệp tin tương ứng và trả mã phản hồi (Response).</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="url-visualizer" class="section-padding visualizer-section">
+            <div class="section-header">
+                <h2>3. Bộ Trực Quan Hóa Cấu Trúc URL Tương Tác</h2>
+                <p>Nhấp chuột trực tiếp vào từng phân đoạn màu sắc của chuỗi URL bên dưới để xem định nghĩa chức năng tương ứng.</p>
+            </div>
+
+            <div class="explorer-container" id="urlBlock1">
+                <div class="block-header">
+                    <h4>Mẫu URL 01: Đường dẫn chuỗi truy vấn động (Dynamic URL Thương mại điện tử)</h4>
+                </div>
+                <div class="terminal-window">
+                    <div class="terminal-dots"><span></span><span></span><span></span></div>
+                    <div class="url-string">
+                        <span class="url-segment seg-proto" data-target="p1">https://</span><span class="url-segment seg-domain" data-target="d1">shopee.vn</span><span class="url-segment seg-path" data-target="pa1">/search</span><span class="url-segment seg-query" data-target="q1">?keyword=laptop</span>
+                    </div>
+                </div>
+                <div class="explanation-panel">
+                    <p class="panel-placeholder">💡 Vui lòng bấm vào một thành phần màu sắc của chuỗi URL phía trên để xem phân tích...</p>
+                    <div class="panel-data p1 hidden">
+                        <h5>🛡️ Giao thức (Protocol) - <code>https://</code></h5>
+                        <p>Hypertext Transfer Protocol Secure. Giao thức truyền tải siêu văn bản bảo mật, đảm bảo toàn bộ thông tin trao đổi giữa trình duyệt và Shopee được mã hóa an toàn, chống nghe lén gói tin.</p>
+                    </div>
+                    <div class="panel-data d1 hidden">
+                        <h5>🌐 Tên miền chính (Host / Domain) - <code>shopee.vn</code></h5>
+                        <p>Địa chỉ định danh thương hiệu của sàn thương mại điện tử Shopee tại Việt Nam, trỏ về cụm máy chủ xử lý dữ liệu của Shopee thông qua hệ thống phân giải DNS.</p>
+                    </div>
+                    <div class="panel-data pa1 hidden">
+                        <h5>📂 Đường dẫn (Path) - <code>/search</code></h5>
+                        <p>Chỉ định đường dẫn thư mục logic hoặc router con trên máy chủ chịu trách nhiệm gọi module thực hiện chức năng tìm kiếm sản phẩm.</p>
+                    </div>
+                    <div class="panel-data q1 hidden">
+                        <h5>⚙️ Chuỗi truy vấn (Query String) - <code>?keyword=laptop</code></h5>
+                        <p>Thành phần truyền dữ liệu biến động lên Server. Bắt đầu bằng dấu <code>?</code> và chứa cặp Tham-số=Giá-trị. Ở đây tham số <code>keyword</code> có giá trị dữ liệu là <code>laptop</code>.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="explorer-container" id="urlBlock2" style="margin-top: 3rem;">
+                <div class="block-header">
+                    <h4>Mẫu URL 02: Đường dẫn tệp tin tĩnh trên Hosting GitHub Pages (Static URL)</h4>
+                </div>
+                <div class="terminal-window">
+                    <div class="terminal-dots"><span></span><span></span><span></span></div>
+                    <div class="url-string">
+                        <span class="url-segment seg-proto" data-target="p2">https://</span><span class="url-segment seg-subdomain" data-target="s2">trungnghia.</span><span class="url-segment seg-domain" data-target="d2">github.io</span><span class="url-segment seg-path" data-target="pa2">/mini-project-2/index.html</span>
+                    </div>
+                </div>
+                <div class="explanation-panel">
+                    <p class="panel-placeholder">💡 Vui lòng bấm vào một thành phần màu sắc của chuỗi URL phía trên để xem phân tích...</p>
+                    <div class="panel-data p2 hidden">
+                        <h5>🛡️ Giao thức an toàn (Protocol) - <code>https://</code></h5>
+                        <p>Giao thức bảo mật tiêu chuẩn giúp trang web cá nhân của bạn tránh được cảnh báo nguy hiểm từ trình duyệt Chrome hoặc Cốc Cốc.</p>
+                    </div>
+                    <div class="panel-data s2 hidden">
+                        <h5>🏢 Tên miền phụ (Subdomain) - <code>trungnghia.</code></h5>
+                        <p>Một nhánh con tách lập từ tên miền gốc. GitHub sử dụng chính Tên tài khoản (Username) của bạn để định danh phân vùng lưu trữ cá nhân.</p>
+                    </div>
+                    <div class="panel-data d2 hidden">
+                        <h5>🌐 Tên miền gốc dịch vụ (Root Domain) - <code>github.io</code></h5>
+                        <p>Tên miền hệ thống máy chủ dịch vụ cung cấp giải pháp deploy hosting tĩnh miễn phí cấp phát bởi tập đoàn GitHub.</p>
+                    </div>
+                    <div class="panel-data pa2 hidden">
+                        <h5>📄 Đường dẫn tệp tài nguyên (Path / File) - <code>/mini-project-2/index.html</code></h5>
+                        <p>Cấu trúc đường dẫn tuyệt đối: Truy cập vào thư mục repository <code>mini-project-2</code> và thực thi hiển thị nội dung tệp cấu trúc chính <code>index.html</code>.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-container">
+            <p>© 2026 WebExplorer Hub - Dự án phân lớp cấu trúc Front-end sạch.</p>
+            <p style="font-size: 0.85rem; color: #64748b; margin-top: 0.5rem;">Sản phẩm học tập được lập trình hoàn thiện bởi Nguyễn Trung Nghĩa.</p>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
